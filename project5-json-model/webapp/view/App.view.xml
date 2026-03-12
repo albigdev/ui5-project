@@ -4,6 +4,4 @@
   controllerName="ui5.walkthrough.controller.App">
   <Button text="Press me" press="onPress" />
   <Input />
-
-  </Button>
 </mvc:View>
