@@ -19,7 +19,7 @@ sap.ui.define(
         this.getView().setModel(oModel);
 
         const resourceModel = new ResourceModel({
-          resourceBundle: "ui5.walkthrough.i18n.i18n",
+          bundleName: "ui5.walkthrough.i18n.i18n",
         });
 
         this.getView().setModel(resourceModel, "translation");
