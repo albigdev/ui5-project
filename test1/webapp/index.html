@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
@@ -10,6 +10,16 @@
       data-sap-ui-theme="sap_belize"
       data-sap-ui-libs="sap.m"
     ></script>
+    <script>
+      sap.ui.define(["sap/m/Image"], function (Image) {
+        "use strict";
+        const oImage = new Image({
+          src: "images/image1.jpg",
+        });
+
+        oImage.placeAt("content");
+      });
+    </script>
   </head>
   <body class="sapUiBody" id="content">
     <label for="w3review">
