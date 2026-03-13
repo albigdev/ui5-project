@@ -13,11 +13,25 @@
     <script>
       sap.ui.define(["sap/m/Image"], function (Image) {
         "use strict";
-        const oImage = new Image({
+        const onImagePressed = function (oEvent) {
+          const oImgId = oEvent.getSource().getId();
+
+          if (oImgId === "image1") alert("Image 1 Pressed");
+          if (oImgId === "image2") alert("Image 2 Pressed");
+        };
+
+        const oImage = new Image("image1", {
           src: "images/image1.jpg",
+          press: onImagePressed,
+        });
+
+        const oImage2 = new Image("image2", {
+          src: "images/image1.jpg",
+          press: onImagePressed,
         });
 
         oImage.placeAt("content");
+        oImage2.placeAt("content");
       });
     </script>
   </head>
