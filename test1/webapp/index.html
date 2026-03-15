@@ -11,28 +11,83 @@
       data-sap-ui-libs="sap.m"
     ></script>
     <script>
-      sap.ui.define(["sap/m/Image"], function (Image) {
-        "use strict";
-        const onImagePressed = function (oEvent) {
-          const oImgId = oEvent.getSource().getId();
+      sap.ui.define(
+        [
+          "sap/m/Image",
+          "sap/m/RadioButton",
+          "sap/m/RadioButtonGroup",
+          "sap/m/Toolbar",
+          "sap/m/Label",
+          "sap/ui/layout/form/SimpleForm",
+        ],
+        function (
+          Image,
+          RadioButton,
+          RadioButtonGroup,
+          Toolbar,
+          Label,
+          SimpleForm,
+        ) {
+          "use strict";
+          const onImagePressed = function (oEvent) {
+            const oImgId = oEvent.getSource().getId();
 
-          if (oImgId === "image1") alert("Image 1 Pressed");
-          if (oImgId === "image2") alert("Image 2 Pressed");
-        };
+            if (oImgId === "image1") alert("Image 1 Pressed");
+            if (oImgId === "image2") alert("Image 2 Pressed");
+          };
 
-        const oImage = new Image("image1", {
-          src: "images/image1.jpg",
-          press: onImagePressed,
-        });
+          const oImage = new Image("image1", {
+            src: "images/image1.jpg",
+            press: onImagePressed,
+            width: "100px",
+            height: "100px",
+          });
 
-        const oImage2 = new Image("image2", {
-          src: "images/image1.jpg",
-          press: onImagePressed,
-        });
+          const oImage2 = new Image("image2", {
+            src: "images/image1.jpg",
+            press: onImagePressed,
+            width: "100px",
+            height: "100px",
+          });
 
-        oImage.placeAt("content");
-        oImage2.placeAt("content");
-      });
+          oImage.addStyeClass("sapUiSmallMargin");
+          oImage2.addStyeClass("sapUiSmallMargin");
+
+          const oRadioButton1 = new RadioButton({
+            text: "First Radio Button",
+          });
+
+          const oRadioButton2 = new RadioButton({
+            text: "Second Radio Button",
+          });
+
+          const oRadioButtonGroup = new RadioButtonGroup({
+            columnns: 2,
+            tooltip: "Radio Button Group Tooltip",
+          });
+
+          oRadioButtonGroup.addItem(oRadioButton1);
+          oRadioButtonGroup.addItem(oRadioButton2);
+
+          oImage.placeAt("content");
+          oImage2.placeAt("content");
+
+          const oLabel = new Label({
+            text: "Radio buttons below",
+          });
+
+          const oToolBar = new Toolbar();
+          oToolBar.addContent(oLabel);
+
+          const oForm = new SimpleForm({
+            layout: "ResponsiveGridLayout",
+          });
+
+          oForm.addContent(oToolBar);
+          oForm.addContent(oRadioButtonGroup);
+          oForm.placeAt("content");
+        },
+      );
     </script>
   </head>
   <body class="sapUiBody" id="content">
