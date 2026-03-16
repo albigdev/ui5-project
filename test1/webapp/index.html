@@ -19,6 +19,8 @@
           "sap/m/Toolbar",
           "sap/m/Label",
           "sap/ui/layout/form/SimpleForm",
+          "sap/ui/layout/Grid",
+          "sap/ui/layout/GridData",
         ],
         function (
           Image,
@@ -27,6 +29,8 @@
           Toolbar,
           Label,
           SimpleForm,
+          Grid,
+          GridData,
         ) {
           "use strict";
           const onImagePressed = function (oEvent) {
@@ -63,6 +67,7 @@
 
           const oRadioButtonGroup = new RadioButtonGroup({
             columns: 2,
+            layoutData: new GridData({ span: "XL12 L12 M12 S12" }),
             tooltip: "Radio Button Group Tooltip",
             buttons: [oRadioButton1, oRadioButton2],
           });
@@ -87,7 +92,12 @@
 
           //oForm.addContent(oToolBar);
 
-          oForm.placeAt("content");
+          const oLayout = new Grid({
+            defaultSpan: "XL12 L12 M12 S12",
+            content: [oImage, oImage2, oForm],
+          });
+
+          oLayout.placeAt("content");
         },
       );
     </script>
