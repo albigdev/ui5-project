@@ -4,7 +4,7 @@
 			<Table items="{/SweetsSupplier}">
 				<headerToolbar>
 					<Toolbar>
-						<Label text="Number of Sweets Suppliers :{/SweetsSupplier/1/ID}"/>
+						<Label text="Number of Sweets Suppliers: {/CountSweets}"/>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
