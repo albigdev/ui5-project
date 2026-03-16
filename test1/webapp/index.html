@@ -64,10 +64,11 @@
           const oRadioButtonGroup = new RadioButtonGroup({
             columnns: 2,
             tooltip: "Radio Button Group Tooltip",
+            content: [oRadioButton1, oRadioButton2],
           });
 
-          oRadioButtonGroup.addItem(oRadioButton1);
-          oRadioButtonGroup.addItem(oRadioButton2);
+          //oRadioButtonGroup.addItem(oRadioButton1);
+          //oRadioButtonGroup.addItem(oRadioButton2);
 
           oImage.placeAt("content");
           oImage2.placeAt("content");
@@ -83,6 +84,8 @@
             layout: "ResponsiveGridLayout",
             content: [oToolBar, oRadioButtonGroup],
           });
+
+          //oForm.addContent(oToolBar);
 
           oForm.placeAt("content");
         },
