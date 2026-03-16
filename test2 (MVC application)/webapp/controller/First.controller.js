@@ -3,8 +3,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   return Controller.extend("gergely.albi.mvcapp.controller.First", {
     onListItemPress: function (oEvent) {
       const oAppView = sap.ui.getCore().byId("appView");
-      const oDetailPageId = oAppView.byId("detailPageId");
-      const sPageId = oDetailPageId.getId();
+      const sPageId = oAppView.byId("detailPageId").getId();
       const oApp = oAppView.byId("app");
       const oPage = oApp.getPage(sPageId);
 
