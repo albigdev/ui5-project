@@ -81,10 +81,9 @@
 
           const oForm = new SimpleForm({
             layout: "ResponsiveGridLayout",
+            content: [oToolBar, oRadioButtonGroup],
           });
 
-          oForm.addContent(oToolBar);
-          oForm.addContent(oRadioButtonGroup);
           oForm.placeAt("content");
         },
       );
