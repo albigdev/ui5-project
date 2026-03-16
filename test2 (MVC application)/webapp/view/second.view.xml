@@ -1,4 +1,4 @@
-<mvc:View controllerName="satya.prasad.mvcapp.controller.second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page navButtonPress="onNavPress" showNavButton="true" title="Details">
 		<content>
 			<ObjectHeader title="{Name}" number="{ID}">

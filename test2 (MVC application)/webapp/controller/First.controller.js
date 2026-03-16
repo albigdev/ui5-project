@@ -1,26 +1,26 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"],function(Controller){
-	"use strict";
-	return Controller.extend("satya.prasad.mvcapp.controller.First",{
-		onListItemPress:function(oEvent){
-		var oAppview = sap.ui.getCore().byId("appView");
-		var oDetailPageId = oAppview.byId("detailPageId");
-		var sPageId	= oDetailPageId.getId();
-		 var oPage = oApp.getPage(sPageId);
+sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
+  "use strict";
+  return Controller.extend("gergely.albi.mvcapp.controller.First", {
+    onListItemPress: function (oEvent) {
+      const oAppview = sap.ui.getCore().byId("appView");
+      const oDetailPageId = oAppview.byId("detailPageId");
+      const sPageId = oDetailPageId.getId();
+      const oPage = oApp.getPage(sPageId);
+
+      const oContext = oEvent.getSource().getBindingContext();
+      oPage.setBindingContext(oContext);
+      oApp.to(sPageId);
+
+      /*const sPageId="appView--detailPageId";
+		 const oPage = oApp.getPage(sPageId);
 		 
-		 var oContext = oEvent.getSource().getBindingContext();
+		 const oContext = oEvent.getSource().getBindingContext();
 		 oPage.setBindingContext(oContext);
-		 oApp.to(sPageId);	
-		 		
-		/*var sPageId="appView--detailPageId";
-		 var oPage = oApp.getPage(sPageId);
-		 
-		 var oContext = oEvent.getSource().getBindingContext();
-		 oPage.setBindingContext(oContext);
-		 oApp.to(sPageId);*/	
-		},
-		toLowerCase:function(sValue){
-			var sString = String(sValue);
-			return sString.toLowerCase();
-		}
-	});
+		 oApp.to(sPageId);*/
+    },
+    toLowerCase: function (sValue) {
+      const sString = String(sValue);
+      return sString.toLowerCase();
+    },
+  });
 });

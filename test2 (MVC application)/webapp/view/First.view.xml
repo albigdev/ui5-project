@@ -1,4 +1,4 @@
-<mvc:View controllerName="satya.prasad.mvcapp.controller.First" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View controllerName="gergely.albi.mvcapp.controller.First" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page title="Sweet Suppliers">
 		<content>
 			<Table items="{/SweetsSupplier}">
