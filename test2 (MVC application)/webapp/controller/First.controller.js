@@ -5,6 +5,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
       const oAppview = sap.ui.getCore().byId("appView");
       const oDetailPageId = oAppview.byId("detailPageId");
       const sPageId = oDetailPageId.getId();
+      const oApp = oAppview.byId("app");
       const oPage = oApp.getPage(sPageId);
 
       const oContext = oEvent.getSource().getBindingContext();
