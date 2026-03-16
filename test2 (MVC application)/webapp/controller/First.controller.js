@@ -3,12 +3,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
 return class First extends Controller {
     onListItemPress(oEvent) {
-      const oAppView = sap.ui.getCore().byId("appView");
-      const oContext = oEvent.getSource().getBindingContext();
-      
-      const oApp = oAppView.byId("app");
-      const oPage = oAppView.byId("detailPageId");
+      const oAppView = sap.ui.getCore().byId("appView"); //XML View App.viw.xml
+
+      const oApp = oAppView.byId("app"); //App control in the XML view App.view.xml
+      const oPage = oAppView.byId("detailPageId"); //Detail page in the XML view App.view.xml
       const sPageId = oAppView.byId("detailPageId").getId();
+      
+      const oContext = oEvent.getSource().getBindingContext();
+      console.log(oContext);
 
       oPage.setBindingContext(oContext);
       oApp.to(sPageId);
