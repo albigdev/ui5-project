@@ -2,10 +2,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   "use strict";
   return Controller.extend("gergely.albi.mvcapp.controller.First", {
     onListItemPress: function (oEvent) {
-      const oAppview = sap.ui.getCore().byId("appView");
-      const oDetailPageId = oAppview.byId("detailPageId");
+      const oAppView = sap.ui.getCore().byId("appView");
+      const oDetailPageId = oAppView.byId("detailPageId");
       const sPageId = oDetailPageId.getId();
-      const oApp = oAppview.byId("app");
+      const oApp = oAppView.byId("app");
       const oPage = oApp.getPage(sPageId);
 
       const oContext = oEvent.getSource().getBindingContext();

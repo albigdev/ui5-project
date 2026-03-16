@@ -57,6 +57,7 @@
 
           async function init() {
             const oView = await XMLView.create({
+              id: "appView",
               viewName: "gergely.albi.mvcapp.view.App",
             });
             oView.placeAt("content");
