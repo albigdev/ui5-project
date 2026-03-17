@@ -9,10 +9,10 @@ return class First extends Controller {
       const oPage = oAppView.byId("detailPageId"); //Detail page in the XML view App.view.xml
       const sPageId = oAppView.byId("detailPageId").getId();
       
-      const oContext = oEvent.getSource().getBindingContext();
+      const oContext = oEvent.getSource().getBindingContext(); //We get the data of the item we have pressed on the list
       console.log(oContext);
 
-      oPage.setBindingContext(oContext);
+      oPage.setBindingContext(oContext); //We set up the page to show the data of the item we have pressed on the list
       oApp.to(sPageId);
     }
 
