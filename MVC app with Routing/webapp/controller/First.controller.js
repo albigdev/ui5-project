@@ -18,12 +18,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
       oPage.setBindingContext(oContext); //We set up the page to show the data of the item we have pressed on the list
 
-      const sPath = oContext.getPath().slice(1);
+      const sID = oContext.getProperty("ID");
 
       const oRouter = this.getOwnerComponent().getRouter();
 
       oRouter.navTo("detail", {
-        path: sPath,
+        ID: sID,
       });
     }
 
