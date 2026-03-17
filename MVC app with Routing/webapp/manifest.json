@@ -37,10 +37,10 @@
       ],
       "targets": {
         "First": {
-          "viewName": "Master"
+          "viewName": "First"
         },
         "Second": {
-          "viewName": "Detail"
+          "viewName": "Second"
         }
       }
     }
