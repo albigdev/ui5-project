@@ -1,6 +1,13 @@
 {
-  "_version": "1.19.0",
   "sap.app": {
-    "id": "gergely.albi.mvcapp"
+    "id": "gergely.albi.mvcapp",
+    "type": "application"
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "gergely.albi.mvcapp.view.App",
+      "type": "XML",
+      "id": "app"
+    }
   }
 }
