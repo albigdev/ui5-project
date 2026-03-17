@@ -3,7 +3,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
 return class First extends Controller {
     onListItemPress(oEvent) {
-  const oRootView = this.getOwnerComponent().getRootControl(); // XML View App.view.xml
+      const oRootView = this.getOwnerComponent().getRootControl(); // XML View App.view.xml
 
       //const oAppViewPages = oAppView.getPages(); //We get the pages of the XML view App.view.xml
       //const firstView = oAppViewPages.find((oPage) => oPage.getId().includes("initialPage"))
