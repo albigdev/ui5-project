@@ -12,11 +12,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
       //const oApp = oRootView.byId("app"); // App control in the XML view App.view.xml
       //const sPageId = oPage.getId();
 
-      const oPage = oRootView.byId("detailPageId"); // Detail page in the XML view App.view.xml
-
       const oContext = oEvent.getSource().getBindingContext(); //We get the data of the item we have pressed on the list
-
-      oPage.setBindingContext(oContext); //We set up the page to show the data of the item we have pressed on the list
 
       const sID = oContext.getProperty("ID");
 
