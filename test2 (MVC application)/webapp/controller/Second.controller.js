@@ -3,8 +3,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
   return class Second extends Controller {
     onNavPress() {
-      const oAppView = sap.ui.getCore().byId("appView");
-      const oApp = oAppView.byId("app");
+      const oRootView = this.getOwnerComponent().getRootControl();
+      const oApp = oRootView.byId("app");
       oApp.back();
     }
   };

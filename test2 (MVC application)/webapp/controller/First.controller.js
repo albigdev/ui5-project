@@ -3,15 +3,15 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
 return class First extends Controller {
     onListItemPress(oEvent) {
-      const oAppView = sap.ui.getCore().byId("appView"); //XML View App.viw.xml
+  const oRootView = this.getOwnerComponent().getRootControl(); // XML View App.view.xml
 
       //const oAppViewPages = oAppView.getPages(); //We get the pages of the XML view App.view.xml
       //const firstView = oAppViewPages.find((oPage) => oPage.getId().includes("initialPage"))
       //const firstViewId = firstView.getId(); //We get the id of the first page in the XML view App.view.xml 
 
-      const oApp = oAppView.byId("app"); //App control in the XML view App.view.xml
-      const oPage = oAppView.byId("detailPageId"); //Detail page in the XML view App.view.xml
-      const sPageId = oAppView.byId("detailPageId").getId();
+      const oApp = oRootView.byId("app"); // App control in the XML view App.view.xml
+      const oPage = oRootView.byId("detailPageId"); // Detail page in the XML view App.view.xml
+      const sPageId = oPage.getId();
       
       const oContext = oEvent.getSource().getBindingContext(); //We get the data of the item we have pressed on the list
       console.log(oContext);
