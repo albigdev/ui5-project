@@ -1,0 +1,48 @@
+{
+  "sap.app": {
+    "id": "gergely.albi.mvcapp",
+    "type": "application"
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "gergely.albi.mvcapp.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "models": {
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/DefaultModel.json"
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "gergely.albi.mvcapp.view",
+        "controlId": "app",
+        "controlAggregation": "pages"
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "master",
+          "target": "First"
+        },
+        {
+          "pattern": "detail/{ID}",
+          "name": "detail",
+          "target": "Second"
+        }
+      ],
+      "targets": {
+        "First": {
+          "viewName": "Master"
+        },
+        "Second": {
+          "viewName": "Detail"
+        }
+      }
+    }
+  }
+}

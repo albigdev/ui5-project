@@ -1,0 +1,10 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Shell>
+		<App id="app" initialPage="initialPage">
+			<pages>
+				<mvc:XMLView id="initialPage" viewName="gergely.albi.mvcapp.view.First"/>
+				<mvc:XMLView id="detailPageId" viewName="gergely.albi.mvcapp.view.Second"/>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
