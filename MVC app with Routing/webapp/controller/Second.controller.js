@@ -6,12 +6,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
       const oRouter = this.getOwnerComponent().getRouter();
       oRouter
         .getRoute("detail")
-        .attachPatternMatched(this._onRouteMatched, this);
+        .attachPatternMatched(this._onRouteMatched, this); //If the route activates, we call this function
     }
 
     onNavPress() {
       const oRouter = this.getOwnerComponent().getRouter();
-      oRouter.navTo("first");
+      oRouter.navTo("master");
     }
 
     _onRouteMatched(oEvent) {
