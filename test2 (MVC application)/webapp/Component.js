@@ -3,7 +3,7 @@ sap.ui.define(
   function (JSONModel, UIComponent) {
     "use strict";
 
-    return class Component extends UIComponent {
+      return UIComponent.extend("gergely.albi.mvcapp.Component", {
       init() {
         super.init();
 
