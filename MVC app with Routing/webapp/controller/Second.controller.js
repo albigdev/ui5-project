@@ -1,15 +1,16 @@
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   "use strict";
-  const oRouter = this.getOwnerComponent().getRouter();
 
   return class Second extends Controller {
     onInit() {
+      const oRouter = this.getOwnerComponent().getRouter();
       oRouter
         .getRoute("detail")
         .attachPatternMatched(this._onRouteMatched, this);
     }
 
     onNavPress() {
+      const oRouter = this.getOwnerComponent().getRouter();
       oRouter.navTo("first");
     }
 
