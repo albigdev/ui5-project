@@ -4,8 +4,8 @@ sap.ui.define(
     "use strict";
 
       return UIComponent.extend("gergely.albi.mvcapp.Component", {
-      init() {
-        super.init();
+      init: function () {
+        UIComponent.prototype.init.apply(this, arguments);
 
         const oData = {
           CountSweets: "2",
@@ -38,7 +38,7 @@ sap.ui.define(
         const oModel = new JSONModel(oData);
         this.setModel(oModel);
       }
-    };
+    });
 
     //OLD WAY
 
