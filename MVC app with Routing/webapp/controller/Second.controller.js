@@ -22,7 +22,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
       const oView = this.getView();
       oView.bindElement({
-        path: "/SweetSupplier/" + sId,
+        path: "/SweetsSupplier/" + sId,
       });
     }
   };
