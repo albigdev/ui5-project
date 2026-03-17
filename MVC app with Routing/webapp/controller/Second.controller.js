@@ -1,20 +1,16 @@
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   "use strict";
+  const oRouter = this.getOwnerComponent().getRouter();
 
   return class Second extends Controller {
     onInit() {
-      const Router = this.getOwnerComponent().getRouter();
-
-      Router.getRoute("detail").attachPatternMatched(
-        this._onRouteMatched,
-        this,
-      );
+      oRouter
+        .getRoute("detail")
+        .attachPatternMatched(this._onRouteMatched, this);
     }
 
     onNavPress() {
-      const oRootView = this.getOwnerComponent().getRootControl();
-      const oApp = oRootView.byId("app");
-      oApp.back();
+      oRouter.navTo("first");
     }
 
     _onRouteMatched(oEvent) {
