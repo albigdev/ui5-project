@@ -3,41 +3,10 @@ sap.ui.define(
   function (JSONModel, UIComponent) {
     "use strict";
 
-      return UIComponent.extend("gergely.albi.mvcapp.Component", {
+    return UIComponent.extend("gergely.albi.mvcapp.Component", {
       init: function () {
         UIComponent.prototype.init.apply(this, arguments);
-
-        const oData = {
-          CountSweets: "2",
-          SweetsSupplier: [
-            {
-              ID: 0,
-              Name: "Sweet Magic",
-              Address: {
-                Street: "Sivarao Street",
-                City: "Vijayawada",
-                State: "Andhra Pradesh",
-                ZipCode: "521456",
-                Country: "INDIA",
-              },
-            },
-            {
-              ID: "1",
-              Name: "Aanjaneya Sweets",
-              Address: {
-                Street: "Bhavanipuram",
-                City: "Vijayawada",
-                State: "Andhra Pradesh",
-                ZipCode: "521456",
-                Country: "INDIA",
-              },
-            },
-          ],
-        };
-
-        const oModel = new JSONModel(oData);
-        this.setModel(oModel);
-      }
+      },
     });
 
     //OLD WAY
