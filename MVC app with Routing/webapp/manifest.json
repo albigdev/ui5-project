@@ -1,7 +1,8 @@
 {
   "sap.app": {
     "id": "gergely.albi.mvcapp",
-    "type": "application"
+    "type": "application",
+    "i18n": "i18n/i18n.properties"
   },
   "sap.ui5": {
     "rootView": {
@@ -13,6 +14,12 @@
       "": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/DefaultModel.json"
+      },
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "gergely.albi.mvcapp.i18n.i18n"
+        }
       }
     },
     "routing": {
