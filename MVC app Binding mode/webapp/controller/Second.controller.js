@@ -29,7 +29,7 @@ sap.ui.define(
         const msg = this.getView()
           .getModel("i18n")
           .getResourceBundle()
-          .getText("title", ["acceptance message"]);
+          .getText("title");
         MessageToast.show(msg);
       }
     };
