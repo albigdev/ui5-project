@@ -20,11 +20,11 @@
 			<f:SimpleForm title="Details 3" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
 			<f:content>
 			<Label text="Name"></Label>
-			<Input value="{namedModel>/SweetsSupplier/Name}"></Input>
+			<Input value="{namedModel>/SweetsSupplier/4/Name}"></Input>
 			<Label text="ID"></Label>
-			<Input value="{ID}"></Input>
+			<Input value="{namedModel>/SweetsSupplier/4/ID}"></Input>
 			<Label text="Country"></Label>
-			<Input value="{Address/Country}"></Input>
+			<Input value="{namedModel>/SweetsSupplier/4/Address/Country}"></Input>
 			</f:content>
 			</f:SimpleForm>
 		</content>
