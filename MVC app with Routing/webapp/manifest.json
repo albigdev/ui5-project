@@ -2,7 +2,9 @@
   "sap.app": {
     "id": "gergely.albi.mvcapp",
     "type": "application",
-    "i18n": "i18n/i18n.properties"
+    "i18n": "i18n/i18n.properties",
+    "title": "{{title}}",
+    "description": "{{description}}"
   },
   "sap.ui5": {
     "rootView": {
