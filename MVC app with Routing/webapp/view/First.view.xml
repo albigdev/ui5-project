@@ -1,5 +1,5 @@
 <mvc:View controllerName="gergely.albi.mvcapp.controller.First" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
-	<Page title="Sweet Suppliers">
+	<Page title="{i18n>title}">
 		<content>
 			<Table items="{/SweetsSupplier}" class="sapUiResponsiveMargin" width="auto">
 				<headerToolbar>
@@ -12,7 +12,7 @@
 						<header><Text text="Sweet Shop ID"/></header>
 					</Column>
 					<Column>
-						<header><Text text="Sweet Shop Name"/>
+						<header><Text text="Sweet Shop {i18n>shopName}"/>
 						</header>
 					</Column>
 				</columns>
