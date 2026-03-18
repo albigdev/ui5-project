@@ -1,0 +1,21 @@
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<Page navButtonPress="onNavPress" showNavButton="true" title="Details">
+		<content>
+			<ObjectHeader title="{Name}" number="{ID}">
+				<attributes>
+					<ObjectAttribute text="{Address/Country}"/>
+				</attributes>
+			</ObjectHeader>
+			<f:SimpleForm title="details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin">
+			<f:content>
+			<Label text="Name"></Label>
+			<Input value="{Name}"></Input>
+			<Label text="ID"></Label>
+			<Input value="{ID}"></Input>
+			<Label text="Country"></Label>
+			<Input value="{Address/Country}"></Input>
+			</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>
