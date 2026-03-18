@@ -1,17 +1,5 @@
 {
-  "CountSweets": "3",
   "SweetsSupplier": [
-    {
-      "ID": 0,
-      "Name": "World of Sweets",
-      "Address": {
-        "Street": "Nyár utca",
-        "City": "Budapest",
-        "State": "Pest",
-        "ZipCode": "1045",
-        "Country": "HUNGARY"
-      }
-    },
     {
       "ID": "4",
       "Name": "ChocoPest",
