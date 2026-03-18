@@ -5,6 +5,18 @@
     "i18n": "i18n/i18n.properties",
     "title": "{{title}}"
   },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://sap-ui5"
+    },
+    "supportedThemes": [
+      "sap_belize",
+      "sap_belize_dark",
+      "sap_belize_hcb",
+      "sap_belize_hcw"
+    ]
+  },
   "sap.ui5": {
     "rootView": {
       "viewName": "gergely.albi.mvcapp.view.App",
