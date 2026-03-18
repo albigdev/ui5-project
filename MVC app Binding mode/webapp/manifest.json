@@ -28,6 +28,10 @@
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/DefaultModel.json"
       },
+      "namedModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/namedModel.json"
+      },
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
