@@ -6,10 +6,10 @@
 					<ObjectAttribute text="{Address/Country}"/>
 				</attributes>
 			</ObjectHeader>
-			<f:SimpleForm title="details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
+			<f:SimpleForm title="Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
 			<f:content>
 			<Label text="Name"></Label>
-			<Input value="{Name}"></Input>
+			<Input value="{= ${Name} === 'Sweet Magic' ? ${Name} + ' Yummy' : ${Name} + ' So Yummy' }"></Input>
 			<Label text="ID"></Label>
 			<Input value="{ID}"></Input>
 			<Label text="Country"></Label>
