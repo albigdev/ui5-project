@@ -17,9 +17,9 @@
 			</f:content>
 			</f:SimpleForm>
 
-			<f:SimpleForm title="Details 3" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
+			<f:SimpleForm title="More Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
 			<f:content>
-			<Label text="Name"></Label>
+			<Label text="{ parts:['i18n>nameLabel', 'ID'], formatter:'JQuery.sap.formatMessage' }"></Label>
 			<Input value="{namedModel>/SweetsSupplier/0/Name}"></Input>
 			<Label text="ID"></Label>
 			<Input value="{namedModel>/SweetsSupplier/0/ID}"></Input>
