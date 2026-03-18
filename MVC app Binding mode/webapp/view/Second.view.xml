@@ -6,7 +6,7 @@
 					<ObjectAttribute text="{Address/Country}"/>
 				</attributes>
 			</ObjectHeader>
-			<f:SimpleForm title="details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin">
+			<f:SimpleForm title="details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
 			<f:content>
 			<Label text="Name"></Label>
 			<Input value="{Name}"></Input>
