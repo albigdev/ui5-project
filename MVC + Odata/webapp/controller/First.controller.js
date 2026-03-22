@@ -3,11 +3,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
   return class First extends Controller {
     onListItemPress(oEvent) {
-      this.getView().getModel().setDefaultBindingMode("OneWay");
+      this.getView().getModel().setDefaultBindingMode("TwoWay");
 
       const oContext = oEvent.getSource().getBindingContext();
 
-      const sID = oContext.getProperty("ID");
+      const sID = oContext.getProperty("ProductID");
 
       const oRouter = this.getOwnerComponent().getRouter();
 
