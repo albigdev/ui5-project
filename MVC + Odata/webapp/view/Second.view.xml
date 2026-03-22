@@ -1,0 +1,41 @@
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<Page navButtonPress="onNavPress" showNavButton="true" title="Details">
+		<content>
+			<ObjectHeader title="{Name}" number="{ID}">
+				<attributes>
+					<ObjectAttribute text="{Address/Country}"/>
+				</attributes>
+			</ObjectHeader>
+			<f:SimpleForm title="Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
+			<f:content>
+			<Label text="Name"></Label>
+			<Input value="{= ${Name} === 'Sweet Magic' ? ${Name} + ' Yummy' : ${Name} + ' So Yummy' }"></Input>
+			<Label text="ID"></Label>
+			<Input value="{ID}"></Input>
+			<Label text="Country"></Label>
+			<Input value="{Address/Country}"></Input>
+			</f:content>
+			</f:SimpleForm>
+
+			<f:SimpleForm title="More Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
+			<f:content>
+			<Label text="{ parts:['i18n>nameLabel', 'ID'], formatter:'JQuery.sap.formatMessage' }"></Label>
+			<Input value="{namedModel>/SweetsSupplier/0/Name}"></Input>
+			<Label text="ID"></Label>
+			<Input value="{namedModel>/SweetsSupplier/0/ID}"></Input>
+			<Label text="Country"></Label>
+			<Input value="{namedModel>/SweetsSupplier/0/Address/Country}"></Input>
+			</f:content>
+			</f:SimpleForm>
+		</content>
+				<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Accept" type="Accept" press="onPress" />
+				<Button text="Reject" type="Reject" />
+				<Button text="Edit" />
+				<Button text="Delete" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
