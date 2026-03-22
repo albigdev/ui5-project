@@ -7,7 +7,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
       const oContext = oEvent.getSource().getBindingContext();
 
-      const sID = oContext.getProperty("ProductID");
+      const sID = oContext.getProperty("SupplierID");
 
       const oRouter = this.getOwnerComponent().getRouter();
 
