@@ -35,6 +35,7 @@
     "models": {
       "": {
         "dataSource": "northwind",
+        "type": "sap.ui.model.odata.v2.ODataModel",
         "settings": {
           "defaultBindingMode": "TwoWay",
           "useBatch": true
