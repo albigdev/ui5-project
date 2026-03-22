@@ -2,10 +2,11 @@ specVersion: "4.0"
 metadata:
   name: test2
 type: application
+
 server:
   customMiddleware:
     - name: ui5-middleware-simpleproxy
       afterMiddleware: compression
-      mountPath: "/northwind"
+      mountPath: "/northwind.svc"
       configuration:
-        baseUri: "https://services.odata.org/northwind"
+        baseUri: "https://services.odata.org/northwind/northwind.svc"
