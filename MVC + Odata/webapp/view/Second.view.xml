@@ -9,11 +9,11 @@
 			<f:SimpleForm title="Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
 			<f:content>
 			<Label text="Name"></Label>
-			<Input value="{= ${Name} === 'Sweet Magic' ? ${Name} + ' Yummy' : ${Name} + ' So Yummy' }"></Input>
+			<Input value="{CompanyName}"></Input>
 			<Label text="ID"></Label>
-			<Input value="{ID}"></Input>
+			<Input value="{SupplierID}"></Input>
 			<Label text="Country"></Label>
-			<Input value="{Address/Country}"></Input>
+			<Input value="{Country}"></Input>
 			</f:content>
 			</f:SimpleForm>
 
