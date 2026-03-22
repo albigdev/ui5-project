@@ -9,3 +9,5 @@ server:
       configuration:
         baseUri: "https://services.odata.org"
         path: "/northwind"
+excludePatterns:
+  - "^/(index.html|resources|test-resources)"
