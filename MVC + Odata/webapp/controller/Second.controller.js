@@ -21,7 +21,7 @@ sap.ui.define(
 
         const oView = this.getView();
         oView.bindElement({
-          path: "/SweetsSupplier/" + sId,
+          path: `/Suppliers(${sId})`,
         });
       }
 
