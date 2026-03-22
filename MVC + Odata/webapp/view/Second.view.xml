@@ -1,12 +1,12 @@
 <mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
 	<Page navButtonPress="onNavPress" showNavButton="true" title="Details">
 		<content>
-			<ObjectHeader title="{Name}" number="{ID}">
+			<ObjectHeader title="{CompanyName}" number="{SupplierID}">
 				<attributes>
 					<ObjectAttribute text="{Address/Country}"/>
 				</attributes>
 			</ObjectHeader>
-			<f:SimpleForm title="Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
+			<f:SimpleForm title="Main Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
 			<f:content>
 			<Label text="Name"></Label>
 			<Input value="{CompanyName}"></Input>
@@ -19,12 +19,12 @@
 
 			<f:SimpleForm title="More Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
 			<f:content>
-			<Label text="{ parts:['i18n>nameLabel', 'ID'], formatter:'JQuery.sap.formatMessage' }"></Label>
-			<Input value="{namedModel>/SweetsSupplier/0/Name}"></Input>
-			<Label text="ID"></Label>
-			<Input value="{namedModel>/SweetsSupplier/0/ID}"></Input>
-			<Label text="Country"></Label>
-			<Input value="{namedModel>/SweetsSupplier/0/Address/Country}"></Input>
+			<Label text="Contact Name"></Label>
+			<Input value="{ContactName}"></Input>
+			<Label text="Contact Title"></Label>
+			<Input value="{ContactTitle}"></Input>
+			<Label text="Phone"></Label>
+			<Input value="{Phone}"></Input>
 			</f:content>
 			</f:SimpleForm>
 		</content>
