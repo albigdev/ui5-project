@@ -1,24 +1,44 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
-  "use strict";
+sap.ui.define(
+  ["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"],
+  function (Controller, JSONModel) {
+    "use strict";
 
-  return class First extends Controller {
-    onListItemPress(oEvent) {
-      this.getView().getModel().setDefaultBindingMode("TwoWay");
+    return class First extends Controller {
+      onInit() {
+        //View model
+        const oViewModel = new JSONModel({
+          count: 0,
+        });
 
-      const oContext = oEvent.getSource().getBindingContext();
+        this.getView().setModel(oViewModel, "viewModel");
 
-      const sID = oContext.getProperty("SupplierID");
+        //table binding
+        const oTable = this.byId("suppliersTable");
 
-      const oRouter = this.getOwnerComponent().getRouter();
+        oTable.attachUpdateFinished(() => {
+          const iCount = oTable.getItems().length;
+          this.getView().getModel("viewModel").setProperty("/count", iCount);
+        });
+      }
 
-      oRouter.navTo("detail", {
-        ID: sID,
-      });
-    }
+      onListItemPress(oEvent) {
+        this.getView().getModel().setDefaultBindingMode("TwoWay");
 
-    toLowerCase(sValue) {
-      const sString = String(sValue);
-      return sString.toLowerCase();
-    }
-  };
-});
+        const oContext = oEvent.getSource().getBindingContext();
+
+        const sID = oContext.getProperty("SupplierID");
+
+        const oRouter = this.getOwnerComponent().getRouter();
+
+        oRouter.navTo("detail", {
+          ID: sID,
+        });
+      }
+
+      toLowerCase(sValue) {
+        const sString = String(sValue);
+        return sString.toLowerCase();
+      }
+    };
+  },
+);

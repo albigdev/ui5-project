@@ -1,10 +1,10 @@
 <mvc:View controllerName="gergely.albi.mvcapp.controller.First" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page title="{i18n>title}">
 		<content>
-			<Table items="{/Suppliers}" class="sapUiResponsiveMargin" width="auto">
+			<Table id="suppliersTable" items="{/Suppliers}" class="sapUiResponsiveMargin" width="auto">
 				<headerToolbar>
 					<Toolbar>
-						<Label text="{i18n>numberOfShops}: {/CountSweets}"/>
+						<Label text="{i18n>numberOfShops}: {viewModel>/count}"/>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
