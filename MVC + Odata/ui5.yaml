@@ -8,4 +8,4 @@ server:
       afterMiddleware: compression
       mountPath: "/northwind"
       configuration:
-        baseUri: "https://services.odata.org"
+        baseUri: "https://services.odata.org/northwind"
