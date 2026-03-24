@@ -2,6 +2,8 @@
 
 Ez a projekt egy SAPUI5 tanuló alkalmazás, amely egy **master-detail** felépítést valósít meg OData adatszolgáltatással.
 
+Live demo - https://myui5app.netlify.app/
+
 ## Használt eszközök és technikák
 
 - **SAPUI5 framework**
