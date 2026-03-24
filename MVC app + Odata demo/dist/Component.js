@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/model/json/JSONModel","sap/ui/core/UIComponent"],function(i,e){"use strict";return e.extend("gergely.albi.mvcapp.Component",{init:function(){e.prototype.init.apply(this,arguments);this.getRouter().initialize()}})});
+//# sourceMappingURL=Component.js.map

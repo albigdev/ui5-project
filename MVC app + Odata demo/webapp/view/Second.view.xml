@@ -1,0 +1,41 @@
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<Page navButtonPress="onNavPress" showNavButton="true" title="Details">
+		<content>
+			<ObjectHeader title="{CompanyName}" number="{SupplierID}">
+				<attributes>
+					<ObjectAttribute text="{Address/Country}"/>
+				</attributes>
+			</ObjectHeader>
+			<f:SimpleForm title="Main Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
+			<f:content>
+			<Label text="Name"></Label>
+			<Input value="{CompanyName}"></Input>
+			<Label text="ID"></Label>
+			<Input value="{SupplierID}"></Input>
+			<Label text="Country"></Label>
+			<Input value="{Country}"></Input>
+			</f:content>
+			</f:SimpleForm>
+
+			<f:SimpleForm title="More Details" editable="true" layout="ResponsiveGridLayout" emptySpanL="5" labelSpanL="1" class="sapUiLargeMargin" width="auto">
+			<f:content>
+			<Label text="Contact Name"></Label>
+			<Input value="{ContactName}"></Input>
+			<Label text="Contact Title"></Label>
+			<Input value="{ContactTitle}"></Input>
+			<Label text="Phone"></Label>
+			<Input value="{Phone}"></Input>
+			</f:content>
+			</f:SimpleForm>
+		</content>
+				<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Accept" type="Accept" press="onPress" />
+				<Button text="Reject" type="Reject" />
+				<Button text="Edit" />
+				<Button text="Delete" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,15 @@
+{
+  "SweetsSupplier": [
+    {
+      "ID": "4",
+      "Name": "ChocoPest",
+      "Address": {
+        "Street": "Magyar utca",
+        "City": "Budapest",
+        "State": "Pest",
+        "ZipCode": "1045",
+        "Country": "HUNGARY"
+      }
+    }
+  ]
+}

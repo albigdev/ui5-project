@@ -1,0 +1,27 @@
+{
+  "CountSweets": "2",
+  "SweetsSupplier": [
+    {
+      "ID": 0,
+      "Name": "Sweet Magic",
+      "Address": {
+        "Street": "Nyár utca",
+        "City": "Budapest",
+        "State": "Pest",
+        "ZipCode": "1045",
+        "Country": "HUNGARY"
+      }
+    },
+    {
+      "ID": "1",
+      "Name": "Bud Sweets",
+      "Address": {
+        "Street": "Magyar utca",
+        "City": "Budapest",
+        "State": "Pest",
+        "ZipCode": "1045",
+        "Country": "HUNGARY"
+      }
+    }
+  ]
+}
