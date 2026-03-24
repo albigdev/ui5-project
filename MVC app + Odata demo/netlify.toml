@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/northwind.svc/*"
+  to = "https://services.odata.org/northwind/northwind.svc/:splat"
+  status = 200
+  force = true

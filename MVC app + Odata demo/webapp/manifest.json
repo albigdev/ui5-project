@@ -6,7 +6,7 @@
     "title": "{{title}}",
     "dataSources": {
       "northwind": {
-        "uri": "https://services.odata.org/northwind/northwind.svc/",
+        "uri": "/northwind.svc/",
         "type": "OData",
         "settings": {
           "odataVersion": "2.0"
