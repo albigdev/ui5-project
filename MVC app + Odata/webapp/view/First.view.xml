@@ -14,6 +14,8 @@
 					<Column>
 						<header><Text text="{i18n>shopName}"/>
 						</header>
+						<header><Text text="{i18n>country}"/>
+						</header>
 					</Column>
 				</columns>
 				<items>
@@ -22,6 +24,10 @@
 							<ObjectIdentifier text="{SupplierID}"/>
 							<ObjectIdentifier text="{
 							path:'CompanyName',
+							formatter:'.toLowerCase'
+							}"/>
+							<ObjectIdentifier text="{
+							path:'Country',
 							formatter:'.toLowerCase'
 							}"/>
 						</cells>
