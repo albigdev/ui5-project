@@ -1,5 +1,9 @@
-export default {
-  toLowerCase: function (e) {
-    return String(e).toLowerCase();
-  },
-};
+sap.ui.define([], function () {
+  "use strict";
+
+  return {
+    toLowerCase: function (sValue) {
+      return String(sValue).toLowerCase();
+    },
+  };
+});
