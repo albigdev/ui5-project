@@ -1,6 +1,10 @@
 sap.ui.define(
-  ["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"],
-  function (Controller, JSONModel) {
+  [
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/json/JSONModel",
+    "../utilities/utilities",
+  ],
+  function (Controller, JSONModel, Utilities) {
     "use strict";
 
     return class First extends Controller {
@@ -36,8 +40,7 @@ sap.ui.define(
       }
 
       toLowerCase(sValue) {
-        const sString = String(sValue);
-        return sString.toLowerCase();
+        return Utilities.toLowerCase(sValue);
       }
     };
   },
