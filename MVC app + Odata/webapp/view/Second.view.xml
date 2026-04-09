@@ -1,7 +1,7 @@
-<mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
-	<Page navButtonPress="onNavPress" showNavButton="true" title="Details" xmlns:core="sap.ui.core" core:require="{
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" core:require="{
 	Box: 'sap/m/MessageBox'
 	}">
+	<Page navButtonPress="onNavPress" showNavButton="true" title="Details">
 		<content>
 			<ObjectHeader title="{CompanyName}" number="{SupplierID}">
 				<attributes>
