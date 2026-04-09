@@ -32,6 +32,11 @@ sap.ui.define(
           .getText("title");
         MessageToast.show(msg);
       }
+
+      goBack() {
+        const oRouter = this.getOwnerComponent().getRouter();
+        oRouter.navTo("master");
+      }
     };
   },
 );
