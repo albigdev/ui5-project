@@ -36,7 +36,7 @@ sap.ui.define(
 
       _onRouteMatched(oEvent) {
         const sId = oEvent.getParameter("arguments").ID;
-        const iSupplierId = parseInt(sId, 10);
+        const iSupplierId = Number(sId);
         this._sSupplierId = sId;
 
         this.getView().bindElement({

@@ -34,7 +34,7 @@
 			<OverflowToolbar>
 				<ToolbarSpacer/>
 				<Button text="Accept" type="Accept" press="onPress" />
-				<Button text="Supplier List" type="Reject" press="onSupplierItemPress" />
+				<Button text="Product List" type="Reject" press="onSupplierItemPress" />
 				<Button text="Edit" press="Box.show('Hello')" />
 				<Button text="Delete" />
 			</OverflowToolbar>
