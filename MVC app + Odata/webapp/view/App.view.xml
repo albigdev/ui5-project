@@ -4,6 +4,7 @@
 			<pages>
 				<mvc:XMLView id="initialPage" viewName="gergely.albi.mvcapp.view.First"/>
 				<mvc:XMLView id="detailPageId" viewName="gergely.albi.mvcapp.view.Second"/>
+				<mvc:XMLView id="productPageId" viewName="gergely.albi.mvcapp.view.Third"/>
 			</pages>
 		</App>
 	</Shell>

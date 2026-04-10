@@ -33,9 +33,11 @@ sap.ui.define(
         MessageToast.show(msg);
       }
 
-      goBack() {
+      onSupplierItemPress() {
         const oRouter = this.getOwnerComponent().getRouter();
-        oRouter.navTo("master");
+        oRouter.navTo("product", {
+          ID: this.getView().getBindingContext().getProperty("SupplierID"),
+        });
       }
     };
   },

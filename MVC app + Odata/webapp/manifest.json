@@ -66,6 +66,11 @@
           "pattern": "detail/{ID}",
           "name": "detail",
           "target": "Second"
+        },
+        {
+          "pattern": "detail/{ID}/products",
+          "name": "product",
+          "target": "Third"
         }
       ],
       "targets": {
@@ -74,6 +79,9 @@
         },
         "Second": {
           "viewName": "Second"
+        },
+        "Third": {
+          "viewName": "Third"
         }
       }
     }

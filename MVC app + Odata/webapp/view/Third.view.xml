@@ -1,0 +1,42 @@
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Third" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" core:require="{
+	utilities: 'gergely/albi/mvcapp/utilities/utilities'}">
+	<Page title="{i18n>title}">
+		<content>
+			<Table id="suppliersTable" items="{/Products}" class="sapUiResponsiveMargin" width="auto">
+				<headerToolbar>
+					<Toolbar>
+						<Label text="Number of Products: {viewModel>/count}"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<header><Text text="Product ID"/></header>
+					</Column>
+					<Column>
+						<header><Text text="Product Name"/>
+						</header>
+					</Column>
+					<Column>
+						<header><Text text="Unit Price"/>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="onListItemPress">
+						<cells>
+							<ObjectIdentifier text="{ProductID}"/>
+							<ObjectIdentifier text="{
+							path:'ProductName',
+							formatter:'utilities.toLowerCase'
+							}"/>
+							<ObjectIdentifier text="{
+							path:'UnitPrice',
+							formatter:'utilities.toLowerCase'
+							}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>
