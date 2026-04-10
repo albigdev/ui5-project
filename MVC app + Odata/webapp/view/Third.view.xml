@@ -29,7 +29,7 @@
 							path:'ProductName',
 							formatter:'utilities.toLowerCase'
 							}"/>
-							<ObjectNumber number="{UnitsInStock}" state="{path: 'UnitPrice', formatter: 'utilities.unitState'}" />
+							<ObjectNumber number="{UnitsInStock}" state="{path: 'UnitsInStock', formatter: 'utilities.unitState'}" />
 						</cells>
 					</ColumnListItem>
 				</items>
