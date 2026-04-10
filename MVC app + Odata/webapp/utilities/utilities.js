@@ -8,5 +8,14 @@ sap.ui.define([], function () {
     formatPrice: function (price) {
       return Number(price).toFixed(2);
     },
+    priceState: function (price) {
+      if (price < 20) {
+        return "Success";
+      } else if (price < 22) {
+        return "Warning";
+      } else {
+        return "Error";
+      }
+    },
   };
 });
