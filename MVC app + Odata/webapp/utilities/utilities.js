@@ -5,10 +5,7 @@ sap.ui.define([], function () {
     toLowerCase: function (sValue) {
       return String(sValue).toLowerCase();
     },
-    formatPrice: function (price) {
-      return Number(price).toFixed(2);
-    },
-    priceState: function (price) {
+    unitState: function (price) {
       if (price < 20) {
         return "Success";
       } else if (price < 22) {

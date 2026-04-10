@@ -17,7 +17,7 @@
 						</header>
 					</Column>
 					<Column>
-						<header><Text text="Unit Price"/>
+						<header><Text text="Stock"/>
 						</header>
 					</Column>
 				</columns>
@@ -29,7 +29,7 @@
 							path:'ProductName',
 							formatter:'utilities.toLowerCase'
 							}"/>
-							<ObjectNumber number="{path: 'UnitPrice', formatter: 'utilities.formatPrice'}" unit="EUR" state="{path: 'UnitPrice', formatter: 'utilities.priceState'}" />
+							<ObjectNumber number="{UnitsInStock}" state="{path: 'UnitPrice', formatter: 'utilities.unitState'}" />
 						</cells>
 					</ColumnListItem>
 				</items>
