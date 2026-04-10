@@ -40,7 +40,7 @@ sap.ui.define(
         this._sSupplierId = sId;
 
         this.getView().bindElement({
-          path: `/Products`,
+          path: `/Suppliers(${iSupplierId})`,
         });
 
         const oTable = this.byId("productsTable");
