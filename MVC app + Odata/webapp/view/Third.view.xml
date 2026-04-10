@@ -29,10 +29,7 @@
 							path:'ProductName',
 							formatter:'utilities.toLowerCase'
 							}"/>
-							<ObjectIdentifier text="{
-							path:'UnitPrice',
-							formatter:'utilities.toLowerCase'
-							}"/>
+							<ObjectNumber number="{UnitPrice}" unit="EUR" />
 						</cells>
 					</ColumnListItem>
 				</items>
