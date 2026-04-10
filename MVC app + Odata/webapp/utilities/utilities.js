@@ -5,5 +5,8 @@ sap.ui.define([], function () {
     toLowerCase: function (sValue) {
       return String(sValue).toLowerCase();
     },
+    formatPrice: function (price) {
+      return Number(price).toFixed(2);
+    },
   };
 });
