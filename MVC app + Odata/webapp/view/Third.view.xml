@@ -34,7 +34,7 @@
 							formatter:'utilities.toLowerCase'
 							}"/>
 							<ObjectNumber number="{UnitsInStock}" state="{path: 'UnitsInStock', formatter: 'utilities.unitState'}" />
-							<ObjectNumber number="{parts: [{path: 'UnitPrice'}, {value: 'EUR'}], type: 'sap.ui.model.type.Currency', formatOptions:{ showMeasure: false }}"/>
+							<ObjectNumber number="{parts: [{path: 'UnitPrice'}, {value: 'EUR'}], type: 'sap.ui.model.type.Currency', formatOptions:{ showMeasure: true }}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
