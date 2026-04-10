@@ -2,7 +2,7 @@
 	utilities: 'gergely/albi/mvcapp/utilities/utilities'}">
 	<Page title="{i18n>title}">
 		<content>
-			<Table id="suppliersTable" items="{/Products}" class="sapUiResponsiveMargin" width="auto">
+			<Table id="productsTable" items="{/Products}" class="sapUiResponsiveMargin" width="auto">
 				<headerToolbar>
 					<Toolbar>
 						<Label text="Number of Products: {viewModel>/count}"/>
