@@ -33,10 +33,9 @@
 				<footer>
 			<OverflowToolbar>
 				<ToolbarSpacer/>
-				<Button text="Accept" type="Accept" press="onPress" />
-				<Button text="Product List" type="Reject" press="onSupplierItemPress" />
-				<Button text="Edit" press="Box.show('Hello')" />
-				<Button text="Delete" />
+				<Button text="Toest test" type="Accept" press="onPress" />
+				<Button text="Box test" press="Box.show('Hello')" />
+				<Button text="Product List" type="Default" press="onSupplierItemPress" />
 			</OverflowToolbar>
 		</footer>
 	</Page>
