@@ -5,14 +5,10 @@ sap.ui.define([], function () {
     toLowerCase: function (sValue) {
       return String(sValue).toLowerCase();
     },
-    unitState: function (price) {
-      if (price < 20) {
-        return "Success";
-      } else if (price < 22) {
-        return "Warning";
-      } else {
-        return "Error";
-      }
+    unitState: function (number) {
+      if (number > 20) return "Success";
+      if (number <= 20) return "Warning";
+      if (number <= 10) return "Error";
     },
   };
 });
