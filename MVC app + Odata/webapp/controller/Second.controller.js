@@ -9,6 +9,8 @@ sap.ui.define(
         oRouter
           .getRoute("detail")
           .attachPatternMatched(this._onRouteMatched, this); //If the route activates, we call this function
+
+        sap.ui.getCore().getMessageManager().registerObject(this.getView(), true);
       }
 
       onNavPress() {

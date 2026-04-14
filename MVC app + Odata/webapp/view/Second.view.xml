@@ -13,7 +13,7 @@
 			<Label text="Name"></Label>
 			<Input value="{CompanyName}"></Input>
 			<Label text="ID"></Label>
-			<Input value="{SupplierID}"></Input>
+			<Input value="{path: 'SupplierID', type: 'sap.ui.model.type.Integer', constraints: {minimum: 1}}"></Input>
 			<Label text="Country"></Label>
 			<Input value="{Country}"></Input>
 			</f:content>
