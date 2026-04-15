@@ -41,11 +41,15 @@ sap.ui.define(
 
         this.getView().bindElement({
           path: `/Suppliers(${iSupplierId})`,
-          expand: "Products/Category",
         });
 
         const oTable = this.byId("productsTable");
         const oBinding = oTable.getBinding("items");
+
+        oTable.bindItems({
+          path: "/Products",
+          expand: "Category",
+        });
 
         if (oBinding) {
           oBinding.filter([
