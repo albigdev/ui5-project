@@ -64,7 +64,9 @@ sap.ui.define(
               new Filter("ProductName", FilterOperator.Contains, sQuery),
             ]);
           } else {
-            oBinding.filter([]);
+            oBinding.filter([
+              new Filter("SupplierID", FilterOperator.EQ, this._sSupplierId),
+            ]);
           }
         }
       }
