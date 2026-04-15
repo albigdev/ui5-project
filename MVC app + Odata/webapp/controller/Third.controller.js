@@ -27,12 +27,12 @@ sap.ui.define(
           .attachPatternMatched(this._onRouteMatched, this);
       }
 
-      onNavPress() {
-        const oRouter = this.getOwnerComponent().getRouter();
-        oRouter.navTo("detail", {
-          ID: this._sSupplierId,
-        });
-      }
+      //   onNavPress() {
+      //     const oRouter = this.getOwnerComponent().getRouter();
+      //     oRouter.navTo("detail", {
+      //       ID: this._sSupplierId,
+      //     });
+      //   }
 
       _onRouteMatched(oEvent) {
         const sId = oEvent.getParameter("arguments").ID;
@@ -41,6 +41,7 @@ sap.ui.define(
 
         this.getView().bindElement({
           path: `/Suppliers(${iSupplierId})`,
+          expand: "Products/Category",
         });
 
         const oTable = this.byId("productsTable");

@@ -26,6 +26,10 @@
 						<header><Text text="Price"/>
 						</header>
 					</Column>
+					<Column>
+						<header><Text text="Category"/>
+						</header>
+					</Column>
 				</columns>
 				<items>
 					<ColumnListItem>
@@ -37,6 +41,7 @@
 							}"/>
 							<ObjectNumber number="{UnitsInStock}" state="{path: 'UnitsInStock', formatter: 'utilities.unitState'}" />
 							<ObjectNumber number="{parts: [{path: 'UnitPrice'}, {value: 'EUR'}], type: 'sap.ui.model.type.Currency', formatOptions:{ showMeasure: true }}"/>
+							<ObjectIdentifier text="{Category/CategoryName}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
