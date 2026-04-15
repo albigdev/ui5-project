@@ -46,12 +46,6 @@ sap.ui.define(
         const oTable = this.byId("productsTable");
         const oBinding = oTable.getBinding("items");
 
-        oTable.bindItems({
-          path: "/Products",
-          expand: "Category",
-          template: oTable.getItems()[0].clone(),
-        });
-
         if (oBinding) {
           oBinding.filter([
             new Filter("SupplierID", FilterOperator.EQ, iSupplierId),
