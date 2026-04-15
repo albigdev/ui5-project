@@ -57,14 +57,17 @@ sap.ui.define(
         const sQuery = oEvent.getParameter("newValue");
         const oTable = this.byId("productsTable");
         const oBinding = oTable.getBinding("items");
+        const oFilter = oBinding.filter([
+          new Filter("SupplierID", FilterOperator.EQ, this._sSupplierId),
+        ]);
 
-        if (oBinding) {
+        if (oFilter) {
           if (sQuery) {
-            oBinding.filter([
+            oFilter.filter([
               new Filter("ProductName", FilterOperator.Contains, sQuery),
             ]);
           } else {
-            oBinding.filter([
+            oFilter.filter([
               new Filter("SupplierID", FilterOperator.EQ, this._sSupplierId),
             ]);
           }
