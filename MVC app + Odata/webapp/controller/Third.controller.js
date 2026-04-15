@@ -52,6 +52,22 @@ sap.ui.define(
           ]);
         }
       }
+
+      onSearch(oEvent) {
+        const sQuery = oEvent.getParameter("newValue");
+        const oTable = this.byId("productsTable");
+        const oBinding = oTable.getBinding("items");
+
+        if (oBinding) {
+          if (sQuery) {
+            oBinding.filter([
+              new Filter("ProductName", FilterOperator.Contains, sQuery),
+            ]);
+          } else {
+            oBinding.filter([]);
+          }
+        }
+      }
     };
   },
 );
