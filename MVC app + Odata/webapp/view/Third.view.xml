@@ -6,6 +6,8 @@
 				<headerToolbar>
 					<Toolbar>
 						<Label text="Number of Products: {viewModel>/count}"/>
+						<ToolbarSpacer/>
+						<SearchField width="20%" liveChange="onSearch" placeholder="Search in products..."/>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
