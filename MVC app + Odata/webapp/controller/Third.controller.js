@@ -49,6 +49,7 @@ sap.ui.define(
         oTable.bindItems({
           path: "/Products",
           expand: "Category",
+          template: oTable.getItems()[0].clone(),
         });
 
         if (oBinding) {
