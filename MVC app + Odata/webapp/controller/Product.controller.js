@@ -1,85 +1,18 @@
-sap.ui.define(
-  [
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator",
-  ],
-  function (Controller, JSONModel, Filter, FilterOperator) {
-    "use strict";
+sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
+  "use strict";
 
-    return class Third extends Controller {
-      onInit() {
-        const oViewModel = new JSONModel({
-          count: 0,
-        });
-        this.getView().setModel(oViewModel, "viewModel");
+  return class Third extends Controller {
+    onInit() {}
 
-        const oTable = this.byId("productsTable");
-        oTable.attachUpdateFinished(() => {
-          const iCount = oTable.getItems().length;
-          this.getView().getModel("viewModel").setProperty("/count", iCount);
-        });
+    onNavPress() {
+      const oRouter = this.getOwnerComponent().getRouter();
+      oRouter.navTo("detail", {
+        ID: this._sSupplierId,
+      });
+    }
 
-        const oRouter = this.getOwnerComponent().getRouter();
-        oRouter
-          .getRoute("product")
-          .attachPatternMatched(this._onRouteMatched, this);
-      }
+    _onRouteMatched(oEvent) {}
 
-      onNavPress() {
-        const oRouter = this.getOwnerComponent().getRouter();
-        oRouter.navTo("detail", {
-          ID: this._sSupplierId,
-        });
-      }
-
-      _onRouteMatched(oEvent) {
-        const sId = oEvent.getParameter("arguments").ID;
-        const iSupplierId = Number(sId);
-        this._sSupplierId = sId;
-
-        this.getView().bindElement({
-          path: `/Suppliers(${iSupplierId})`,
-        });
-
-        const oTable = this.byId("productsTable");
-        const oBinding = oTable.getBinding("items");
-
-        if (oBinding) {
-          oBinding.filter([
-            new Filter("SupplierID", FilterOperator.EQ, iSupplierId),
-          ]);
-        }
-      }
-
-      onSearch(oEvent) {
-        const sQuery = oEvent.getParameter("newValue");
-        const oTable = this.byId("productsTable");
-        const oBinding = oTable.getBinding("items");
-
-        if (oBinding) {
-          if (sQuery) {
-            oBinding.filter([
-              new Filter({
-                filters: [
-                  new Filter("ProductName", FilterOperator.Contains, sQuery),
-                  new Filter(
-                    "SupplierID",
-                    FilterOperator.EQ,
-                    this._sSupplierId,
-                  ),
-                ],
-                and: true,
-              }),
-            ]);
-          } else {
-            oBinding.filter([
-              new Filter("SupplierID", FilterOperator.EQ, this._sSupplierId),
-            ]);
-          }
-        }
-      }
-    };
-  },
-);
+    onSearch(oEvent) {}
+  };
+});
