@@ -74,7 +74,7 @@
         },
         {
           "pattern": "detail/{ID}/products/{ProductID}",
-          "name": "productDetail",
+          "name": "product",
           "target": "Product"
         }
       ],
@@ -87,6 +87,9 @@
         },
         "Third": {
           "viewName": "Third"
+        },
+        "Product": {
+          "viewName": "Product"
         }
       }
     }

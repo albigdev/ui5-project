@@ -23,7 +23,7 @@ sap.ui.define(
 
         const oRouter = this.getOwnerComponent().getRouter();
         oRouter
-          .getRoute("product")
+          .getRoute("productList")
           .attachPatternMatched(this._onRouteMatched, this);
       }
 
