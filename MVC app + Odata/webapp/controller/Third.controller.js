@@ -22,8 +22,25 @@ sap.ui.define(
         oTable.attachUpdateFinished(() => {
           const oBinding = oTable.getBinding("items");
           const iCount = oBinding ? oBinding.getLength() : 0;
-          const iOk = oBinding ? oBinding.getContents() : 0;
-          //Stock greater or equal to 20
+          const iOk = oBinding
+            ? oBinding
+                .getContexts()
+                .filter((ctx) => ctx.getProperty("UnitsInStock") >= 20).length
+            : 0;
+          const iWarning = oBinding
+            ? oBinding
+                .getContexts()
+                .filter(
+                  (ctx) =>
+                    ctx.getProperty("UnitsInStock") < 20 &&
+                    ctx.getProperty("UnitsInStock") > 0,
+                ).length
+            : 0;
+          const iCritical = oBinding
+            ? oBinding
+                .getContexts()
+                .filter((ctx) => ctx.getProperty("UnitsInStock") === 0).length
+            : 0;
 
           this.getView().getModel("viewModel").setProperty("/count", iCount);
         });
