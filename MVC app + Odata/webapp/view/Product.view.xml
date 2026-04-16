@@ -1,4 +1,4 @@
-<mvc:View controllerName="gergely.albi.mvcapp.controller.Third" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Product" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
 	<Page navButtonPress="onNavPress" showNavButton="true" title="Product details">
 		<content>
 			<Panel headerText="Product Information"></Panel>
