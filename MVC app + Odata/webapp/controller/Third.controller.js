@@ -22,6 +22,9 @@ sap.ui.define(
         oTable.attachUpdateFinished(() => {
           const oBinding = oTable.getBinding("items");
           const iCount = oBinding ? oBinding.getLength() : 0;
+          const iOk = oBinding ? oBinding.getContents() : 0;
+          //Stock greater or equal to 20
+
           this.getView().getModel("viewModel").setProperty("/count", iCount);
         });
 
