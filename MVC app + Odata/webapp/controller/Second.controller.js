@@ -37,7 +37,7 @@ sap.ui.define(
 
       onSupplierItemPress() {
         const oRouter = this.getOwnerComponent().getRouter();
-        oRouter.navTo("productList", {
+        oRouter.navTo("product", {
           ID: this.getView().getBindingContext().getProperty("SupplierID"),
         });
       }

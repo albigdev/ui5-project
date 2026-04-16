@@ -42,7 +42,7 @@ sap.ui.define(
         this.sProductId = sProductId;
 
         const oRouter = this.getOwnerComponent().getRouter();
-        oRouter.navTo("productDetail", {
+        oRouter.navTo("product", {
           ID: this._sSupplierId,
           ProductID: this.sProductId,
         });
