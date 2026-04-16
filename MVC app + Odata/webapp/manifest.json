@@ -69,8 +69,13 @@
         },
         {
           "pattern": "detail/{ID}/products",
-          "name": "product",
+          "name": "productList",
           "target": "Third"
+        },
+        {
+          "pattern": "detail/{ID}/products/{ProductID}",
+          "name": "productDetail",
+          "target": "ProductDetail"
         }
       ],
       "targets": {

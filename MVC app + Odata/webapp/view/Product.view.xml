@@ -1,0 +1,13 @@
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Third" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Page navButtonPress="onNavPress" showNavButton="true" title="Product details">
+		<content>
+			<Panel headerText="Product Information"></Panel>
+				<l:Grid>
+				<Text text="{ProductID}" />
+				<Text text="{ProductName}" />
+				<Text text="{UnitsOnOrder}" />
+				<Text text="{Discontinued}" />
+			</l:Grid>
+		</content>
+	</Page>
+</mvc:View>
