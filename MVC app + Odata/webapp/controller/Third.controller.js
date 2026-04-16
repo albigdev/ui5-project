@@ -17,7 +17,8 @@ sap.ui.define(
 
         const oTable = this.byId("productsTable");
         oTable.attachUpdateFinished(() => {
-          const iCount = oTable.getItems().length;
+          const oBinding = oTable.getBinding("items");
+          const iCount = oBinding ? oBinding.getLength() : 0;
           this.getView().getModel("viewModel").setProperty("/count", iCount);
         });
 
