@@ -1,6 +1,36 @@
 <mvc:View controllerName="gergely.albi.mvcapp.controller.Third" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" core:require="{
 	utilities: 'gergely/albi/mvcapp/utilities/utilities'}">
 	<Page navButtonPress="onNavPress" showNavButton="true" title="Products of {CompanyName}">
+		<IconTabBar
+		id="idIconTabBar"
+		select=".onFilterSelect"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				showAll="true"
+				count="{/ProductCollectionStats/Counts/Total}"
+				text="Products"
+				key="All" />
+			<IconTabSeparator />
+			<IconTabFilter
+				icon="sap-icon://begin"
+				iconColor="Positive"
+				count="{/ProductCollectionStats/Counts/Weight/Ok}"
+				text="Ok"
+				key="Ok" />
+			<IconTabFilter
+				icon="sap-icon://compare"
+				iconColor="Critical"
+				count="{/ProductCollectionStats/Counts/Weight/Heavy}"
+				text="Heavy"
+				key="Heavy" />
+			<IconTabFilter
+				icon="sap-icon://inventory"
+				iconColor="Negative"
+				count="{/ProductCollectionStats/Counts/Weight/Overweight}"
+				text="Overweight"
+				key="Overweight" />
+		</items>
 		<content>
 			<Table id="productsTable" items="{path: '/Products', parameters: {expand: 'Category', select: 'ProductID,ProductName,UnitsInStock,UnitPrice,Category/CategoryName'}, sorter: {path: 'Category/CategoryName', group: true}}" class="sapUiResponsiveMargin" width="auto">
 				<headerToolbar>
@@ -47,5 +77,6 @@
 				</items>
 			</Table>
 		</content>
+		</IconTabBar>
 	</Page>
 </mvc:View>
