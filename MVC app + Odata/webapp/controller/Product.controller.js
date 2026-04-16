@@ -14,7 +14,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
         .getBindingContext()
         .getProperty("SupplierID");
       const oRouter = this.getOwnerComponent().getRouter();
-      oRouter.navTo("detail", {
+      oRouter.navTo("productList", {
         ID: supplierId,
       });
     }
