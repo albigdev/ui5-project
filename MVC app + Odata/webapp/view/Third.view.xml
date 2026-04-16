@@ -13,23 +13,23 @@
 				key="All" />
 			<IconTabSeparator />
 			<IconTabFilter
-				icon="sap-icon://begin"
+				icon="sap-icon://cart-full"
 				iconColor="Positive"
 				count="{/ProductCollectionStats/Counts/Weight/Ok}"
 				text="Ok"
 				key="Ok" />
 			<IconTabFilter
-				icon="sap-icon://compare"
+				icon="sap-icon://cart-4"
 				iconColor="Critical"
 				count="{/ProductCollectionStats/Counts/Weight/Heavy}"
-				text="Heavy"
-				key="Heavy" />
+				text="Warning"
+				key="Warning" />
 			<IconTabFilter
-				icon="sap-icon://inventory"
+				icon="sap-icon://cart"
 				iconColor="Negative"
 				count="{/ProductCollectionStats/Counts/Weight/Overweight}"
-				text="Overweight"
-				key="Overweight" />
+				text="Critical"
+				key="Critical" />
 		</items>
 		<content>
 			<Table id="productsTable" items="{path: '/Products', parameters: {expand: 'Category', select: 'ProductID,ProductName,UnitsInStock,UnitPrice,Category/CategoryName'}, sorter: {path: 'Category/CategoryName', group: true}}" class="sapUiResponsiveMargin" width="auto">
