@@ -43,6 +43,13 @@ sap.ui.define(
             : 0;
 
           this.getView().getModel("viewModel").setProperty("/count", iCount);
+          this.getView().getModel("viewModel").setProperty("/Ok", iOk);
+          this.getView()
+            .getModel("viewModel")
+            .setProperty("/Warning", iWarning);
+          this.getView()
+            .getModel("viewModel")
+            .setProperty("/Critical", iCritical);
         });
 
         const oRouter = this.getOwnerComponent().getRouter();
