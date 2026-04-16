@@ -34,19 +34,19 @@ sap.ui.define(
         });
       }
 
-      onProductItemPress(oEvent) {
-        const sProductId = oEvent
-          .getSource()
-          .getBindingContext()
-          .getProperty("ProductID");
-        this.sProductId = sProductId;
+      //   onProductItemPress(oEvent) {
+      //     const sProductId = oEvent
+      //       .getSource()
+      //       .getBindingContext()
+      //       .getProperty("ProductID");
+      //     this.sProductId = sProductId;
 
-        const oRouter = this.getOwnerComponent().getRouter();
-        oRouter.navTo("productDetail", {
-          ID: this._sSupplierId,
-          ProductID: this.sProductId,
-        });
-      }
+      //     const oRouter = this.getOwnerComponent().getRouter();
+      //     oRouter.navTo("productDetail", {
+      //       ID: this._sSupplierId,
+      //       ProductID: this.sProductId,
+      //     });
+      //   }
 
       _onRouteMatched(oEvent) {
         const sId = oEvent.getParameter("arguments").ID;
