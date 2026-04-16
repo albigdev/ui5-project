@@ -12,6 +12,9 @@ sap.ui.define(
       onInit() {
         const oViewModel = new JSONModel({
           count: 0,
+          Ok: 0,
+          Warning: 0,
+          Critical: 0,
         });
         this.getView().setModel(oViewModel, "viewModel");
 

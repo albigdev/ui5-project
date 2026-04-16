@@ -8,26 +8,26 @@
 		<items>
 			<IconTabFilter
 				showAll="true"
-				count="{/ProductCollectionStats/Counts/Total}"
+				count="{viewModel>/count}"
 				text="Products"
 				key="All" />
 			<IconTabSeparator />
 			<IconTabFilter
 				icon="sap-icon://cart-full"
 				iconColor="Positive"
-				count="{/ProductCollectionStats/Counts/Weight/Ok}"
+				count="{viewModel>/Ok}"
 				text="Ok"
 				key="Ok" />
 			<IconTabFilter
 				icon="sap-icon://cart-4"
 				iconColor="Critical"
-				count="{/ProductCollectionStats/Counts/Weight/Heavy}"
+				count="{viewModel>/Warning}"
 				text="Warning"
 				key="Warning" />
 			<IconTabFilter
 				icon="sap-icon://cart"
 				iconColor="Negative"
-				count="{/ProductCollectionStats/Counts/Weight/Overweight}"
+				count="{viewModel>/Critical}"
 				text="Critical"
 				key="Critical" />
 		</items>
