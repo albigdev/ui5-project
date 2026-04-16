@@ -10,9 +10,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
     }
 
     onNavPress() {
+      const supplierId = this.getView()
+        .getBindingContext()
+        .getProperty("SupplierID");
       const oRouter = this.getOwnerComponent().getRouter();
       oRouter.navTo("detail", {
-        ID: this._sSupplierId,
+        ID: supplierId,
       });
     }
 
@@ -24,7 +27,5 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
         path: `/Products(${productId})`,
       });
     }
-
-    onSearch(oEvent) {}
   };
 });
