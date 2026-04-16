@@ -75,7 +75,7 @@
         {
           "pattern": "detail/{ID}/products/{ProductID}",
           "name": "productDetail",
-          "target": "ProductDetail"
+          "target": "Product"
         }
       ],
       "targets": {
