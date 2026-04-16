@@ -39,12 +39,12 @@ sap.ui.define(
           .getSource()
           .getBindingContext()
           .getProperty("ProductID");
-        this.sProductId = sProductId;
+        this._sProductId = sProductId;
 
         const oRouter = this.getOwnerComponent().getRouter();
         oRouter.navTo("product", {
           ID: this._sSupplierId,
-          ProductID: this.sProductId,
+          ProductID: this._sProductId,
         });
       }
 
