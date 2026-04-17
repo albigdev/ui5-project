@@ -129,7 +129,7 @@ sap.ui.define(
       onFilterSelect(oEvent) {
         const sKey = oEvent.getParameter("key");
         const oTable = this.byId("productsTable");
-        const oBindign = oTable.getBinding("items");
+        const oBinding = oTable.getBinding("items");
         const aFilters = [];
 
         if (oBinding) {
@@ -182,7 +182,7 @@ sap.ui.define(
             );
           }
 
-          oBindign.filter(aFilters);
+          oBinding.filter(aFilters);
         }
       }
     };
