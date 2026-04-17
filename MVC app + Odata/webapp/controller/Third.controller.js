@@ -18,40 +18,6 @@ sap.ui.define(
         });
         this.getView().setModel(oViewModel, "viewModel");
 
-        const oTable = this.byId("productsTable");
-        oTable.attachUpdateFinished(() => {
-          const oBinding = oTable.getBinding("items");
-          const iCount = oBinding ? oBinding.getLength() : 0;
-          const iOk = oBinding
-            ? oBinding
-                .getContexts()
-                .filter((ctx) => ctx.getProperty("UnitsInStock") >= 20).length
-            : 0;
-          const iWarning = oBinding
-            ? oBinding
-                .getContexts()
-                .filter(
-                  (ctx) =>
-                    ctx.getProperty("UnitsInStock") <= 20 &&
-                    ctx.getProperty("UnitsInStock") > 10,
-                ).length
-            : 0;
-          const iCritical = oBinding
-            ? oBinding
-                .getContexts()
-                .filter((ctx) => ctx.getProperty("UnitsInStock") <= 10).length
-            : 0;
-
-          this.getView().getModel("viewModel").setProperty("/count", iCount);
-          this.getView().getModel("viewModel").setProperty("/Ok", iOk);
-          this.getView()
-            .getModel("viewModel")
-            .setProperty("/Warning", iWarning);
-          this.getView()
-            .getModel("viewModel")
-            .setProperty("/Critical", iCritical);
-        });
-
         const oRouter = this.getOwnerComponent().getRouter();
         oRouter
           .getRoute("productList")
@@ -84,6 +50,8 @@ sap.ui.define(
         const iSupplierId = Number(sId);
         this._sSupplierId = sId;
 
+        this._loadSummaryCounts(iSupplierId);
+
         this.getView().bindElement({
           path: `/Suppliers(${iSupplierId})`,
         });
@@ -96,6 +64,37 @@ sap.ui.define(
             new Filter("SupplierID", FilterOperator.EQ, iSupplierId),
           ]);
         }
+      }
+
+      _loadSummaryCounts(iSupplierId) {
+        this.getView()
+          .getModel()
+          .read("/Products", {
+            filters: [new Filter("SupplierID", FilterOperator.EQ, iSupplierId)],
+            urlParameters: {
+              $select: "UnitsInStock",
+            },
+            success: (oData) => {
+              const aResults = oData.results || [];
+              const iCount = aResults.length;
+              const iOk = aResults.filter(
+                (oProduct) => oProduct.UnitsInStock >= 20,
+              ).length;
+              const iWarning = aResults.filter(
+                (oProduct) =>
+                  oProduct.UnitsInStock <= 20 && oProduct.UnitsInStock > 10,
+              ).length;
+              const iCritical = aResults.filter(
+                (oProduct) => oProduct.UnitsInStock <= 10,
+              ).length;
+
+              const oViewModel = this.getView().getModel("viewModel");
+              oViewModel.setProperty("/count", iCount);
+              oViewModel.setProperty("/Ok", iOk);
+              oViewModel.setProperty("/Warning", iWarning);
+              oViewModel.setProperty("/Critical", iCritical);
+            },
+          });
       }
 
       onSearch(oEvent) {
