@@ -32,14 +32,14 @@ sap.ui.define(
                 .getContexts()
                 .filter(
                   (ctx) =>
-                    ctx.getProperty("UnitsInStock") < 20 &&
-                    ctx.getProperty("UnitsInStock") > 0,
+                    ctx.getProperty("UnitsInStock") <= 20 &&
+                    ctx.getProperty("UnitsInStock") > 10,
                 ).length
             : 0;
           const iCritical = oBinding
             ? oBinding
                 .getContexts()
-                .filter((ctx) => ctx.getProperty("UnitsInStock") === 0).length
+                .filter((ctx) => ctx.getProperty("UnitsInStock") <= 10).length
             : 0;
 
           this.getView().getModel("viewModel").setProperty("/count", iCount);
