@@ -125,6 +125,66 @@ sap.ui.define(
           }
         }
       }
+
+      onFilterSelect(oEvent) {
+        const sKey = oEvent.getParameter("key");
+        const oTable = this.byId("productsTable");
+        const oBindign = oTable.getBinding("items");
+        const aFilters = [];
+
+        if (oBinding) {
+          if (sKey === "All") {
+            aFilters.push(
+              new Filter("SupplierID", FilterOperator.EQ, this._sSupplierId),
+            );
+          } else if (sKey === "Ok") {
+            aFilters.push(
+              new Filter({
+                filters: [
+                  new Filter("UnitsInStock", FilterOperator.GE, 20),
+                  new Filter(
+                    "SupplierID",
+                    FilterOperator.EQ,
+                    this._sSupplierId,
+                  ),
+                ],
+                and: true,
+              }),
+            );
+          } else if (sKey === "Warning") {
+            aFilters.push(
+              new Filter({
+                filters: [
+                  new Filter("UnitsInStock", FilterOperator.LE, 20),
+                  new Filter("UnitsInStock", FilterOperator.GT, 10),
+                  new Filter(
+                    "SupplierID",
+                    FilterOperator.EQ,
+                    this._sSupplierId,
+                  ),
+                ],
+                and: true,
+              }),
+            );
+          } else if (sKey === "Critical") {
+            aFilters.push(
+              new Filter({
+                filters: [
+                  new Filter("UnitsInStock", FilterOperator.LE, 10),
+                  new Filter(
+                    "SupplierID",
+                    FilterOperator.EQ,
+                    this._sSupplierId,
+                  ),
+                ],
+                and: true,
+              }),
+            );
+          }
+
+          oBindign.filter(aFilters);
+        }
+      }
     };
   },
 );
