@@ -21,7 +21,14 @@ sap.ui.define(
         const oTable = this.byId("productsTable");
         oTable.attachUpdateFinished(() => {
           const oBinding = oTable.getBinding("items");
-          const iCount = oBinding ? oBinding.getLength() : 0;
+          const all = oBinding
+            ? oBinding
+                .getContexts()
+                .filter(
+                  (ctx) => ctx.getProperty("SupplierID") === this._sSupplierId,
+                )
+            : [];
+          const iCount = all.length;
           const iOk = oBinding
             ? oBinding
                 .getContexts()
