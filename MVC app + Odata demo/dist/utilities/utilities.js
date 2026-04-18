@@ -1,0 +1,2 @@
+sap.ui.define([],function(){"use strict";return{toLowerCase:function(r){return String(r).toLowerCase()},unitState:function(r){const n=Number(r);if(n<=10){return"Error"}if(n<=20){return"Warning"}return"Success"}}});
+//# sourceMappingURL=utilities.js.map
