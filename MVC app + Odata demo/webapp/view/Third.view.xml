@@ -1,0 +1,82 @@
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Third" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" core:require="{
+	utilities: 'gergely/albi/mvcapp/utilities/utilities'}">
+	<Page navButtonPress="onNavPress" showNavButton="true" title="Products of {CompanyName}">
+		<IconTabBar
+		id="idIconTabBar"
+		select=".onFilterSelect"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				showAll="true"
+				count="{viewModel>/count}"
+				text="Products"
+				key="All" />
+			<IconTabSeparator />
+			<IconTabFilter
+				icon="sap-icon://cart-full"
+				iconColor="Positive"
+				count="{viewModel>/Ok}"
+				text="Ok"
+				key="Ok" />
+			<IconTabFilter
+				icon="sap-icon://cart-4"
+				iconColor="Critical"
+				count="{viewModel>/Warning}"
+				text="Warning"
+				key="Warning" />
+			<IconTabFilter
+				icon="sap-icon://cart"
+				iconColor="Negative"
+				count="{viewModel>/Critical}"
+				text="Critical"
+				key="Critical" />
+		</items>
+		<content>
+			<Table id="productsTable" items="{path: '/Products', parameters: {expand: 'Category', select: 'ProductID,ProductName,UnitsInStock,UnitPrice,Category/CategoryName'}, sorter: {path: 'Category/CategoryName', group: true}}" class="sapUiResponsiveMargin" width="auto">
+				<headerToolbar>
+					<Toolbar>
+						<Label text="Number of Products: {viewModel>/count}"/>
+						<ToolbarSpacer/>
+						<SearchField width="20%" liveChange="onSearch" placeholder="Search in products..."/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<header><Text text="Product ID"/></header>
+					</Column>
+					<Column>
+						<header><Text text="Product Name"/>
+						</header>
+					</Column>
+					<Column>
+						<header><Text text="Stock"/>
+						</header>
+					</Column>
+					<Column>
+						<header><Text text="Price"/>
+						</header>
+					</Column>
+					<Column>
+						<header><Text text="Category"/>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="onProductItemPress">
+						<cells>
+							<ObjectIdentifier text="{ProductID}"/>
+							<ObjectIdentifier text="{
+							path:'ProductName',
+							formatter:'utilities.toLowerCase'
+							}"/>
+							<ObjectNumber number="{UnitsInStock}" state="{path: 'UnitsInStock', formatter: 'utilities.unitState'}" />
+							<ObjectNumber number="{parts: [{path: 'UnitPrice'}, {value: 'EUR'}], type: 'sap.ui.model.type.Currency', formatOptions:{ showMeasure: true }}"/>
+							<ObjectIdentifier text="{Category/CategoryName}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		</IconTabBar>
+	</Page>
+</mvc:View>
