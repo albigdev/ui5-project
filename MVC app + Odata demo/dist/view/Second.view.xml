@@ -1,4 +1,6 @@
-<mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+<mvc:View controllerName="gergely.albi.mvcapp.controller.Second" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" core:require="{
+	Box: 'sap/m/MessageBox'
+	}">
 	<Page navButtonPress="onNavPress" showNavButton="true" title="Details">
 		<content>
 			<ObjectHeader title="{CompanyName}" number="{SupplierID}">
@@ -11,7 +13,7 @@
 			<Label text="Name"></Label>
 			<Input value="{CompanyName}"></Input>
 			<Label text="ID"></Label>
-			<Input value="{SupplierID}"></Input>
+			<Input value="{path: 'SupplierID', type: 'sap.ui.model.type.Integer', constraints: {minimum: 1}}"></Input>
 			<Label text="Country"></Label>
 			<Input value="{Country}"></Input>
 			</f:content>
@@ -31,10 +33,9 @@
 				<footer>
 			<OverflowToolbar>
 				<ToolbarSpacer/>
-				<Button text="Accept" type="Accept" press="onPress" />
-				<Button text="Reject" type="Reject" />
-				<Button text="Edit" />
-				<Button text="Delete" />
+				<Button text="Toest test" type="Accept" press="onPress" />
+				<Button text="Box test" press="Box.show('Hello')" />
+				<Button text="Product List" type="Default" press="onSupplierItemPress" />
 			</OverflowToolbar>
 		</footer>
 	</Page>

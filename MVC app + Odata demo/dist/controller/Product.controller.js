@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(t){"use strict";return class e extends t{onInit(){const t=this.getOwnerComponent().getRouter();t.getRoute("product").attachPatternMatched(this._onRouteMatched,this)}onNavPress(){const t=this.getView().getBindingContext().getProperty("SupplierID");const e=this.getOwnerComponent().getRouter();e.navTo("productList",{ID:t})}_onRouteMatched(t){const e=t.getParameter("arguments").ProductID;this._sProductId=e;this.getView().bindElement({path:`/Products(${e})`})}}});
+//# sourceMappingURL=Product.controller.js.map
